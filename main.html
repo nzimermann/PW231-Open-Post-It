@@ -11,7 +11,7 @@
 	<div class="container-main">
 		<div class="container-content">
 			<header>
-				<img src="./img/logo.png" class="logo">
+				<img src="./assets/img/logo.png" class="logo" alt="logo" onClick="window.location.reload()">
 				<nav>
 					<ul class="btn-segment">
 						<li id="btn-principal">
@@ -21,11 +21,23 @@
 							<a href="#">O que são post-its?</a>
 						</li>
 						<li id="btn-contatos">
-							<a href="#">Contatos</a>
+							<a href="#">Contatos
+								<img src="assets/icons/arrow_down.svg" alt="Seta para baixo">
+							</a>
+							<div class="dropdown-contatos">
+								<a href="https://github.com/giovanedossantos" target="_blank">Giovane Dos Santos</a>
+								<a href="https://github.com/LuiFs" target="_blank">Luís Felipe de Castilho</a>
+								<a href="https://github.com/LyanRodrigues" target="_blank">Lyan Rodrigues</a>
+								<a href="https://github.com/nzimermann" target="_blank">Nícolas Zimermann</a>
+							</div>
 						</li>
+
 					</ul>
 				</nav>
-				<div>Usuário</div>
+				<div class="user-area" onclick="alert('Usuário já autenticado')">
+					<img src="assets/icons/person_icon.svg" alt="Ícone do usuário">
+					<span>Seu Usuário</span>
+				</div>
 			</header>
 			<main>
 				main

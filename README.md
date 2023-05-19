@@ -1,13 +1,13 @@
 # PW231-Mat-Open-Post-It
 
-### Requisitos mínimos da interface gráfica (0/13): 
-- [ ] Conter cabeçalho com título
-- [ ] Conter menu com submenus presentes no topo da página ou na lateral esquerda (todos os menus deverão funcionar para alguma coisa presente em SUA PÁGINA INICIAL).
-- [ ] Conter um local que SIMBOLIZE que você está autenticado na página. Deve ficar no canto superior direito. Não será cadastrado usuário, somente simbólico (exemplo: nome de usuário fixo com foto fixa, como vemos no AVA ao fazer login).
+### Requisitos mínimos da interface gráfica (5/13): 
+- [x] Conter cabeçalho com título
+- [x] Conter menu com submenus presentes no topo da página ou na lateral esquerda (todos os menus deverão funcionar para alguma coisa presente em SUA PÁGINA INICIAL).
+- [x] Conter um local que SIMBOLIZE que você está autenticado na página. Deve ficar no canto superior direito. Não será cadastrado usuário, somente simbólico (exemplo: nome de usuário fixo com foto fixa, como vemos no AVA ao fazer login).
 - [ ] Conter uma forma de realizar o CRUDL (inserir, alterar, excluir, mostrar os dados de um item e listar todos)
 - [ ] Conter rodapé com o nome de toda a equipe
-- [ ] Conter uma logo no canto superior esquerdo que redirecione para a home da página
-- [ ] Os menus devem ser feitos utilizando lista com itens
+- [x] Conter uma logo no canto superior esquerdo que redirecione para a home da página
+- [x] Os menus devem ser feitos utilizando lista com itens
 - [ ] Deve-se utilizar HTML 5 semântico
 - [ ] A maior parte dos alinhamentos devem ser feitos com CSS externo
 - [ ] Deve-se utilizar classes para melhorar a visibilidade do CSS
@@ -15,8 +15,8 @@
 - [ ] A página deve ser responsiva
 - [ ] Deve ser implementados todos os elementos solicitados e já aprovados no Trabalho 1.
 
-### Requisitos de funcionalidades Javascript (0/9):
-- [ ] Ao clicar na logo, deve recarregar a homepage
+### Requisitos de funcionalidades Javascript (1/9):
+- [x] Ao clicar na logo, deve recarregar a homepage
 - [ ] Ao clicar no cadastrar/inserir do formulário, caso algum campo obrigatório esteja em branco ou preenchido com valor incorreto, deve-se apresentar uma mensagem adequada a situação
 - [ ] Ao clicar no cadastrar/inserir do formulário, caso os campos estejam corretos, deve-se adicionar uma linha na tabela com os dados conforme presentes nesse formulário
 - [ ] Ao clicar no botão de cancelar/limpar do formulário, a ação de limpa-lo deve ser realizada
