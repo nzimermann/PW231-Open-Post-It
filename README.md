@@ -5,7 +5,7 @@
 - [x] Conter menu com submenus presentes no topo da página ou na lateral esquerda (todos os menus deverão funcionar para alguma coisa presente em SUA PÁGINA INICIAL).
 - [x] Conter um local que SIMBOLIZE que você está autenticado na página. Deve ficar no canto superior direito. Não será cadastrado usuário, somente simbólico (exemplo: nome de usuário fixo com foto fixa, como vemos no AVA ao fazer login).
 - [ ] Conter uma forma de realizar o CRUDL (inserir, alterar, excluir, mostrar os dados de um item e listar todos)
-- [ ] Conter rodapé com o nome de toda a equipe
+- [X] Conter rodapé com o nome de toda a equipe
 - [x] Conter uma logo no canto superior esquerdo que redirecione para a home da página
 - [x] Os menus devem ser feitos utilizando lista com itens
 - [ ] Deve-se utilizar HTML 5 semântico
