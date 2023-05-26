@@ -118,6 +118,10 @@ img.logo {
 	height: 100px;
 }
 
+img.logo:hover {
+	cursor:pointer;
+}
+
 .btn-segment {
 	display: flex;
 	flex-direction: row;
