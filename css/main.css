@@ -24,7 +24,11 @@ body {
 	flex-direction: column;
 	align-items: center;
 	position: relative;
-	background-color: darkgray;
+	background: url("../assets/img/postit_backgroundpostit_background.png");
+}
+
+@media (max-width: 1024px) {
+	body {align-items: normal;}
 }
 
 header {
@@ -59,19 +63,6 @@ nav {
 	flex: none;
 	align-self: stretch;
 	flex-grow: 1;
-}
-
-footer {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	width: var(--screen-width);
-	height: 80px;
-	flex: none;
-	align-self: stretch;
-	flex-grow: 0;
 }
 
 header ul {
@@ -187,7 +178,7 @@ header ul li#btn-contatos:hover .dropdown-contatos a:hover {
 	background-color: rgba(29, 25, 43, 0.08);
 }
 
-.user-area {
+header .user-area {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -197,4 +188,54 @@ header ul li#btn-contatos:hover .dropdown-contatos a:hover {
 	flex: none;
 	align-self: stretch;
 	flex-grow: 0;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	width: var(--screen-width);
+	height: 80px;
+	flex: none;
+	align-self: stretch;
+	flex-grow: 0;
+}
+
+img.logoF {
+    height: 60px;
+}
+
+footer .textN {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 24px;
+    gap: 24px;
+    height: 42px;
+    background: var(--yellow);
+    border-radius: 100px;
+}
+
+footer span.nomes {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+}
+
+footer span.ano {
+    font-style: normal;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.5px;
+    order: 3;
 }
