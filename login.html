@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <main>
+        <div class="frase">
+            Write,<br> Print,<br>&<span style="color: #FFC03F;">Post-It!</span>
+        </div>
+        <script>
+            let input_element = document.querySelector("input");
+
+            input_element.addEventListener("keyup", () => {
+                input_element.setAttribute("value", input_element.value);
+            })
+        </script>
+        <form class="form">
+            <label class="texto1">Login</label>
+            <div class="input-contain">
+                <input type="text" id="fname" name="fname" autocomplete="off" value=""
+                    aria-labelledby="placeholder-fname">
+                <label class="placeholder-text" for="fname" id="placeholder-fname">
+                    <spam class="text">First Name</spam>
+                </label>
+            </div>
+            <div class="input-contain">
+                <input type="text" id="fname" name="fname" autocomplete="off" value=""
+                    aria-labelledby="placeholder-fname">
+                <label class="placeholder-text" for="fname" id="placeholder-fname">
+                    <spam class="text">Senha</spam>
+                </label>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
