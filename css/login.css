@@ -1,38 +1,22 @@
 body {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding: 0px;
-
-    position: relative;
-    width: 1440px;
-    height: 1024px;
-
+    font-family: 'Roboto', sans-serif;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
     background: url("../assets/img/postit_backgroundpostit_background.png");
 }
 
 main {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 30px;
-    gap: 40px;
-
+	flex-direction: column;
+	align-items: center;
     width: 650px;
-    height: 1024px;
-
-    /* M3/white */
-
-    background: #FFFFFF;
-
-    /* Inside auto layout */
-
-    flex: center;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
+	gap: 10px;
+	flex: none;
+	flex-grow: 0;
+    background-color: white;
 }
 
 .frase {
@@ -60,7 +44,7 @@ main {
     gap: 10px;
 
     width: 325px;
-    height: 594px;
+    height: 470px;
 
     flex: none;
     order: 1;
