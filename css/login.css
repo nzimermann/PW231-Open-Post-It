@@ -1,22 +1,41 @@
 body {
     font-family: 'Roboto', sans-serif;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: relative;
     background: url("../assets/img/postit_backgroundpostit_background.png");
 }
 
 main {
     display: flex;
-	flex-direction: column;
-	align-items: center;
+    flex-direction: column;
+    align-items: center;
     width: 650px;
-	gap: 10px;
-	flex: none;
-	flex-grow: 0;
+    gap: 10px;
+    flex: none;
+    flex-grow: 0;
     background-color: white;
+}
+
+#checkS {
+    align-self: start;
+}
+
+#myCheck {
+    width: 15px;
+    height: 15px;
+}
+
+input[type="button"] {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 10rem;
+}
+
+input:hover {
+    cursor: pointer;
 }
 
 .frase {
@@ -36,7 +55,6 @@ main {
 }
 
 .form {
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,13 +92,6 @@ main {
     font-size: 62.5%;
 }
 
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .input-contain {
     position: relative;
 }
@@ -88,27 +99,27 @@ body {
 input {
     height: 5rem;
     width: 30rem;
-    border: 2px solid #FFC03F;
+    border: 2px solid black;
     border-radius: 1rem;
 
 }
 
 input:focus {
     outline: none;
-    border-color: #FFC03F(232, 189, 14);
+    border-color: black;
 }
 
 input:focus+.placeholder-text .text,
 :not(input[value=""])+.placeholder-text .text {
     background-color: white;
     font-size: 1.1rem;
-    color: #FFC03F;
+    color: black;
     transform: translate(0, -170%);
 }
 
 input:focus+.placeholder-text .text {
-    border-color: #FFC03F;
-    color: #FFC03F;
+    border-color: black;
+    color: black;
 }
 
 .placeholder-text {
@@ -129,7 +140,7 @@ input:focus+.placeholder-text .text {
     padding: 0 0.5rem;
     background-color: transparent;
     transform: translate(0);
-    color: #FFC03F;
+    color: black;
     transition: transform 0.15s ease-out, font-size 0.15s ease-out, background-color 0.2s ease-out, color 0.15s ease-out;
 }
 
