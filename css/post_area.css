@@ -1,0 +1,114 @@
+:root {
+	--white: #F6FEFC;
+	--black: #1D192B;
+	--yellow: #FFC03F;
+	--blue: #9FD5DF;
+	--pink: #F0A2A2;
+	--green: #A2D5C3;
+	--screen-width: 1024px;
+}
+
+.container-postit-area {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 0 12px;
+	gap: 16px;
+}
+
+.form-postit {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 12px;
+	align-self: stretch;
+}
+
+.form-postit h3 {
+	align-self: center;
+}
+
+.form-postit form {
+	gap: 15px;
+}
+
+form.form-postit input[type="text"], 
+form.form-postit textarea {
+	border-radius: 4px;
+	border: solid #5C5C5C 1px;
+	padding: 8px;
+	font-size: 1rem;
+	width: 260px;
+}
+
+form.form-postit textarea {
+	max-width: 260px;
+	height: 140px;
+}
+
+form .options-panel {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+	/* height: 32px; */
+	align-self: stretch;
+}
+
+form .form-postit-buttons {
+	justify-content: flex-end;
+}
+
+form .form-postit-buttons button {
+	border: solid var(--black) 1px;
+	border-radius: 100px;
+	padding: 8px 24px;
+}
+
+#btn-postit {
+	color: var(--white);
+	background-color: var(--black);
+}
+
+#btn-postit:hover {
+	color: var(--black);
+	background-color: var(--white);
+	cursor: pointer;
+}
+
+#btn-limpar {
+	color: var(--black);
+	background-color: var(--white);
+}
+
+#btn-limpar:hover {
+	cursor: pointer;
+}
+
+#btn-limpar:active {
+	color: var(--white);
+	background-color: var(--black);
+}
+
+/* .posts-recentes-comunidade {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 10px;
+	gap: 10px;
+	border-left: 1px solid #36343B;
+	background-color: blue;
+}
+
+.postit-area {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: space-around;
+} */
+
+.post-it {
+	width: 190px;
+	height: 160px;
+	background-color: var(--yellow);
+}

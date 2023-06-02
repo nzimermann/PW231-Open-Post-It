@@ -8,6 +8,7 @@
 	<link rel="icon" href="assets/icons/favicon.svg">
 	<title>Open Post-It</title>
 	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/post_area.css">
 </head>
 
 <body>
@@ -42,6 +43,31 @@
 				</div>
 			</header>
 			<main>
+				<div class="container-postit-area">
+					<section class="form-postit">
+						<h3>Escreva uma nota!</h3>
+						<form class="form-postit">
+							<input type="text" maxlength="28" placeholder="Título">
+							<textarea maxlength="200" placeholder="Vou escrever sobre..."></textarea>
+							<div class="options-panel">
+								<button>Fonte</button>
+								<button>Cor</button>
+								<input type="checkbox">
+								<label>checkbox</label>
+							</div>
+							<div class="options-panel form-postit-buttons">
+								<button id="btn-limpar">Limpar</button>
+								<button id="btn-postit">Post-It!</button>
+							</div>
+						</form>
+					</section>
+					<section class="posts-recentes-comunidade">
+						<h2>Posts recentes da comunidade:</h2>
+						<div class="postit-area">
+							<div class="post-it"></div>
+						</div>
+					</section>
+				</div>
 				<table>
 					<tr>
 						<th>titulo</th>

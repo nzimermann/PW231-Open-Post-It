@@ -48,7 +48,7 @@ header {
 main {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	/* align-items: center; */
 	gap: 10px;
 	flex: none;
 	flex-grow: 0;
@@ -131,7 +131,6 @@ header ul li a {
 .container-content {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	gap: 10px;
 	isolation: isolate;
 	flex: none;
@@ -201,6 +200,10 @@ header .user-area {
 	flex: none;
 	align-self: stretch;
 	flex-grow: 0;
+}
+
+header .user-area:hover > * {
+	cursor: pointer;
 }
 
 footer {
