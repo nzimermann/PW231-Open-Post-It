@@ -50,11 +50,22 @@
 							<input type="text" maxlength="28" placeholder="Título">
 							<textarea maxlength="200" placeholder="Vou escrever sobre..."></textarea>
 							<div class="options-panel">
-								<button>Fonte</button>
-								<button>Cor</button>
+								<select class="select-font-box">
+									<option value="1">Roboto</option>
+									<option value="2">Arial</option>
+									<option value="3">Times</option>
+									<option value="4">Calibri</option>
+								</select>
+								<select class="select-color-box">
+									<option value="1">Amarelo</option>
+									<option value="2">Azul</option>
+									<option value="3">Rosa</option>
+									<option value="4">Verde</option>
+								</select>
 								<input type="checkbox">
-								<label>checkbox</label>
+								<label><b>Privado</b></label>
 							</div>
+							<p style="color:red;">O título deve ser preenchido</p> <!-- TEMPORARIO -->
 							<div class="options-panel form-postit-buttons">
 								<button id="btn-limpar">Limpar</button>
 								<button id="btn-postit">Post-It!</button>
@@ -64,6 +75,10 @@
 					<section class="posts-recentes-comunidade">
 						<h2>Posts recentes da comunidade:</h2>
 						<div class="postit-area">
+							<div class="post-it"></div>
+							<div class="post-it"></div>
+							<div class="post-it"></div>
+							<div class="post-it"></div>
 							<div class="post-it"></div>
 						</div>
 					</section>

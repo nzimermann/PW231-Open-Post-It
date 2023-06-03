@@ -39,9 +39,7 @@ header {
 	padding-right: 24px;
 	gap: 48px;
 	height: 100px;
-	flex: none;
 	align-self: stretch;
-	flex-grow: 0;
 	/* border-bottom: 2px solid #CAC4D0; */
 }
 
@@ -52,19 +50,6 @@ main {
 	gap: 10px;
 	flex: none;
 	flex-grow: 0;
-}
-
-table , th, td {
-	border: 1px solid;
-}
-table {
-	width: 100%;
-}
-table {
-	border-collapse: collapse;
-}
-td {
-	text-align: center;
 }
 
 nav {
@@ -172,7 +157,7 @@ header ul li#btn-contatos {
 	position: absolute;
 	background-color: var(--white);
 	min-width: 200px;
-	margin-top: 186px;
+	margin-top: 183px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
 }

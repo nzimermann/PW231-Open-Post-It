@@ -38,11 +38,11 @@ form.form-postit textarea {
 	border: solid #5C5C5C 1px;
 	padding: 8px;
 	font-size: 1rem;
-	width: 260px;
+	width: 265px;
 }
 
 form.form-postit textarea {
-	max-width: 260px;
+	max-width: 265px;
 	height: 140px;
 }
 
@@ -51,7 +51,6 @@ form .options-panel {
 	flex-direction: row;
 	align-items: center;
 	gap: 10px;
-	/* height: 32px; */
 	align-self: stretch;
 }
 
@@ -62,7 +61,8 @@ form .form-postit-buttons {
 form .form-postit-buttons button {
 	border: solid var(--black) 1px;
 	border-radius: 100px;
-	padding: 8px 24px;
+	height: 2.3rem;
+	width: 5rem;
 }
 
 #btn-postit {
@@ -78,11 +78,12 @@ form .form-postit-buttons button {
 
 #btn-limpar {
 	color: var(--black);
-	background-color: var(--white);
+	background-color: #FFF;
 }
 
 #btn-limpar:hover {
 	cursor: pointer;
+	font-weight: bold;
 }
 
 #btn-limpar:active {
@@ -90,25 +91,31 @@ form .form-postit-buttons button {
 	background-color: var(--black);
 }
 
-/* .posts-recentes-comunidade {
+.options-panel select {
+	border-radius: 5px;
+	height: 32px;
+	padding: 0 5px;
+}
+
+.options-panel input[type="checkbox"] {
+	margin-right: -5px;
+	margin-left: 10px;
+}
+
+.posts-recentes-comunidade {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
-	padding: 10px;
-	gap: 10px;
-	border-left: 1px solid #36343B;
-	background-color: blue;
+	gap: 1rem;
 }
 
 .postit-area {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
-	justify-content: space-around;
-} */
+}
 
 .post-it {
-	width: 190px;
-	height: 160px;
+	width: 210px;
+	height: 180px;
 	background-color: var(--yellow);
 }
