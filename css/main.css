@@ -3,18 +3,19 @@
 	margin: 0;
 }
 
-@font-face {
-	font-family: 'Roboto';
-	src: url('../assets/fonts/Roboto-Regular.ttf'),
-}
-
 :root {
 	--white: #F6FEFC;
+	--black: #1D192B;
 	--yellow: #FFC03F;
 	--blue: #9FD5DF;
 	--pink: #F0A2A2;
 	--green: #A2D5C3;
 	--screen-width: 1024px;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../assets/fonts/Roboto-Regular.ttf'),
 }
 
 body {

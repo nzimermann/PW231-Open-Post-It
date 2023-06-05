@@ -1,13 +1,3 @@
-:root {
-	--white: #F6FEFC;
-	--black: #1D192B;
-	--yellow: #FFC03F;
-	--blue: #9FD5DF;
-	--pink: #F0A2A2;
-	--green: #A2D5C3;
-	--screen-width: 1024px;
-}
-
 .container-postit-area {
 	display: flex;
 	flex-direction: row;
@@ -66,19 +56,18 @@ form .form-postit-buttons button {
 }
 
 #btn-postit {
-	color: var(--white);
+	color: white;
 	background-color: var(--black);
 }
 
 #btn-postit:hover {
 	color: var(--black);
-	background-color: var(--white);
+	background-color: white;
 	cursor: pointer;
 }
 
 #btn-limpar {
-	color: var(--black);
-	background-color: #FFF;
+	background-color: white;
 }
 
 #btn-limpar:hover {
@@ -87,7 +76,7 @@ form .form-postit-buttons button {
 }
 
 #btn-limpar:active {
-	color: var(--white);
+	color: white;
 	background-color: var(--black);
 }
 

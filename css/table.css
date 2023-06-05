@@ -1,0 +1,40 @@
+@import './main.css';
+
+.table-section {
+	padding: 1.2rem;
+}
+
+.content-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.content-table thead tr {
+	border-bottom: solid 3px var(--blue);
+	text-align: left;
+	font-weight: bold;
+}
+
+.content-table th, .content-table td {
+	padding: 12px 15px;
+}
+
+div.tfoot {
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	gap: 12px;
+}
+
+/* table , th, td {
+	border: 1px solid;
+}
+table {
+	width: 100%;
+}
+table {
+	border-collapse: collapse;
+}
+td {
+	text-align: center;
+} */
