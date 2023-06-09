@@ -4,6 +4,12 @@
 	padding: 1.2rem;
 }
 
+.table-section .table-conector {
+	background-color: #FFF;
+	border: solid var(--black) 1px;
+	border-radius: 7px;
+}
+
 .content-table {
 	border-collapse: collapse;
 	width: 100%;
@@ -12,29 +18,56 @@
 .content-table thead tr {
 	border-bottom: solid 3px var(--blue);
 	text-align: left;
-	font-weight: bold;
+}
+
+.content-table thead tr img {
+	vertical-align: middle;
 }
 
 .content-table th, .content-table td {
 	padding: 12px 15px;
 }
 
+.content-table tbody tr > td:first-child {
+	padding: 0 4px;
+	height: fit-content;
+	width: 12px;
+}
+
+.content-table tbody tr > td:first-child img {
+	padding: 4px;
+}
+
+.content-table tbody tr > td:first-child img:hover{
+	border-radius: 100px;
+	background-color: #F6FEFCC9;
+}
+
+.content-table tbody tr > td:first-child img:active{
+	background-color: #F35757;
+}
+
+.content-table tbody tr:hover {
+	background-color: var(--blue);
+}
+
 div.tfoot {
 	display: flex;
 	flex-direction: row;
 	justify-content: end;
-	gap: 12px;
+	align-items: center;
+	gap: 16px;
+	height: 46px;
+	border-top: solid var(--blue) 3px;
+	padding-right: 12px;
 }
 
-/* table , th, td {
-	border: 1px solid;
+div.tfoot button {
+	border: none;
+	background-color: var(--white);
+	padding: 3px;
+	border-radius: 100px;
 }
-table {
-	width: 100%;
-}
-table {
-	border-collapse: collapse;
-}
-td {
-	text-align: center;
-} */
+
+div.tfoot button:hover{background-color: #DDD;} 
+div.tfoot button:active{background-color: #CCC;}

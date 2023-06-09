@@ -43,7 +43,7 @@
 					<span>Seu Usuário</span>
 				</div>
 			</header>
-			<main>
+			<main>			
 				<div class="container-postit-area">
 					<section class="form-postit">
 						<h3>Escreva uma nota!</h3>
@@ -85,67 +85,75 @@
 					</section>
 				</div>
 				<section class="table-section">
-					<table class="content-table">
-						<thead>
-							<tr>
-								<th>titulo</th>
-								<th>texto</th>
-								<th>usuario</th>
-								<th>data de publicação</th>
-								<th>cor</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>texto</td>
-								<td>lorem ipslum</td>
-								<td>bot</td>
-								<td>07/05/2023</td>
-								<td>azul</td>
-							</tr>
-							<tr>
-								<td>meu titulo</td>
-								<td>lorem ipslum</td>
-								<td>nicolas</td>
-								<td>07/05/2023</td>
-								<td>amarelo</td>
-							</tr>
-							<tr>
-								<td>titulo1</td>
-								<td>lorem ipslum</td>
-								<td>luis</td>
-								<td>07/05/2023</td>
-								<td>verde</td>
-							</tr>
-							<tr>
-								<td>titulo2</td>
-								<td>lorem ipslum</td>
-								<td>lyan</td>
-								<td>07/05/2023</td>
-								<td>rosa</td>
-							</tr>
-							<tr>
-								<td>tiulo3</td>
-								<td>lorem ipslum</td>
-								<td>giovani</td>
-								<td>07/05/2023</td>
-								<td>azul</td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="tfoot">
-						<p>Linhas por página</p>
-						<select>
-							<option value="1">10</option>
-							<option value="2">25</option>
-							<option value="3">50</option>
-							<option value="4">100</option>
-						</select>
-						<p>1-10 de 100</p>
-						<button>Final left</button>
-						<button>Page left</button>
-						<button>Page right</button>
-						<button>Final right</button>
+					<div class="table-conector">
+						<table class="content-table">
+							<thead>
+								<tr>
+									<th></th> <!-- Lixeira -->
+									<th><img src="./assets/icons/unfold_more.svg" alt="Ordenação">Título</th>
+									<th><img src="./assets/icons/unfold_more.svg" alt="Ordenação">Texto</th>
+									<th><img src="./assets/icons/unfold_more.svg" alt="Ordenação">Usuário</th>
+									<th><img src="./assets/icons/unfold_more.svg" alt="Ordenação">Fonte</th>
+									<th><img src="./assets/icons/unfold_more.svg" alt="Ordenação">Cor</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><img src="assets/icons/trash.svg" alt="Lixeira"></td>
+									<td>Meu Título</td>
+									<td>Lorem Ipsum</td>
+									<td>BOT</td>
+									<td>Roboto</td>
+									<td>Azul</td>
+								</tr>
+								<tr>
+									<td><img src="assets/icons/trash.svg" alt="Lixeira"></td>
+									<td>Título1</td>
+									<td>Lorem Ipsum</td>
+									<td>Nicolas</td>
+									<td>Arial</td>
+									<td>Amarelo</td>
+								</tr>
+								<tr>
+									<td><img src="assets/icons/trash.svg" alt="Lixeira"></td>
+									<td>Título2</td>
+									<td>Lorem Ipsum</td>
+									<td>Luís</td>
+									<td>Times</td>
+									<td>Verde</td>
+								</tr>
+								<tr>
+									<td><img src="assets/icons/trash.svg" alt="Lixeira"></td>
+									<td>Título3</td>
+									<td>Lorem Ipsum</td>
+									<td>Lyan</td>
+									<td>Calibri</td>
+									<td>Rosa</td>
+								</tr>
+								<tr>
+									<td><img src="assets/icons/trash.svg" alt="Lixeira"></td>
+									<td>Título4</td>
+									<td>Lorem Ipsum</td>
+									<td>Giovani</td>
+									<td>Roboto</td>
+									<td>Azul</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="tfoot">
+							<p>Linhas por página</p>
+							<select>
+								<option value="1">10</option>
+								<option value="2">25</option>
+								<option value="3">50</option>
+								<option value="4">100</option>
+							</select>
+							<p>1-10 de 100</p>
+							<button><img src="./assets/icons/skip_left.svg" alt="Primeira página"></button>
+							<button><img src="./assets/icons/arrow_left.svg" alt="Página anterior"></button>
+							<button><img src="./assets/icons/arrow_right.svg" alt="Próxima página"></button>
+							<button><img src="./assets/icons/skip_right.svg" alt="Última página"></button>
+						</div>
 					</div>
 				</section>
 			</main>
