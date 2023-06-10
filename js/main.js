@@ -1,6 +1,3 @@
-// localStorage.setItem("index", 0); // guardar index no local storage (idea)
-// getFormData(); localStorage.clear();
-
 // Chave para array de posts no localStorage
 const postsKey = 'posts'
 
@@ -60,11 +57,15 @@ function getHTML_tableRows() {
 	let str = ``;
 	
 	for (let i = 0; i < posts.length; i++) {
+		let text = getPost(i).text;
+		if (text.length > 22) {
+			text = text.substring(0, 22)+'...';
+		}
 		str += `<tr>
 		<td><img src="assets/icons/trash.svg" alt="Lixeira" onclick='removePost(${i})'></td>
 		<td>${getPost(i).title}</td>
-		<td>${getPost(i).text}</td>
-		<td>Usuário</td>
+		<td title="${getPost(i).text}">${text}</td>
+		<td>${document.getElementById('username').innerHTML}</td>
 		<td>${getPost(i).font}</td>
 		<td>${getPost(i).color}</td>
 		</tr>`;
