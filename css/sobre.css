@@ -21,6 +21,16 @@ p {
     z-index: -1;
 }
 
+#mainSobre {
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+    align-items: center;
+	gap: 10px;
+	flex: none;
+	flex-grow: 0;
+}
+
 .image {
     width: 283px;
     height: 342px;

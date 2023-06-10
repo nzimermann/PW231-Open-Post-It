@@ -15,41 +15,227 @@
         <div class="frase">
             Write,<br> Print,<br>&<span style="color: #FFC03F;">Post-It!</span>
         </div>
-        <script>
-            let input_element = document.querySelector("input");
-
-            input_element.addEventListener("keyup", () => {
-                input_element.setAttribute("value", input_element.value);
-            })
-        </script>
-        <form class="form">
+        <form>
             <label class="texto1">Login</label>
-            <section class="input-contain">
-                <input type="text" id="fname" name="fname" autocomplete="off" value=""
-                    aria-labelledby="placeholder-fname">
-                <label class="placeholder-text" for="fname" id="placeholder-fname">
-                    <spam class="text">First Name</spam>
-                </label>
+            <section class="textfield">
+                <input type="text" name="" id="myText" placeholder="Usuário">
             </section>
-            <section class="input-contain">
-                <input type="password" id="password" name="password" autocomplete="off" value=""
-                    aria-labelledby="placeholder-fname" type="">
-                <label class="placeholder-text" for="fname" id="placeholder-fname">
-                    <spam class="text">Senha</spam>
-                </label>
+            <p class="errorUserPsw" id="error">O usuário deve ter no minimo 4 caracteres [a-z,A-z,0-9,-,_]</p>
+            <section class="textfield">
+                <input type="password" name="" id="password" placeholder="Senha">
+                <img src="../assets/icons/eye-close.png" id="eyeicon">
             </section>
-            <span style="margin-top: 15px; align-self: flex-start;">Esqueci minha senha</span>
-            <section id="checkS">
-                <input type="checkbox" id="myCheck">
+            <p class="errorUserPsw" id="errorPsw">A senha deve ter no minimo 6 caracteres [a-z,A-z,0-9,-,_]</p>
+            <section>
+                <input type="checkbox" name="" id="myCheckBox">
                 <label>Lembre-me</label>
             </section>
-            <section>
-                <input type="button" value="Cadastre-se">
-                <input type="button" onclick="loginFunc" value="Login">
-                <script>
-                    
-                </script>
+            <button id="forgotPassword">Esqueceu a senha?</button>
+            <section id="newPsw">
+                <input type="password" name="" id="newPassword" placeholder="Nova senha">
+                <img src="../assets/icons/eye-close.png" id="eyeiconNewPsw">
             </section>
+            <p class="errorUserPsw" id="errorNewPsw">A senha deve ter no minimo 6 caracteres [a-z,A-z,0-9,-,_]</p>
+            <section id="confNewPsw">
+                <input type="password" name="" id="confNewPassword" placeholder="Confirmar nova senha">
+                <img src="../assets/icons/eye-close.png" id="eyeiconConfNewPsw">
+            </section>
+            <p class="errorUserPsw" id="errorConfNewPsw">A senha deve ter no minimo 6 caracteres [a-z,A-z,0-9,-,_]</p>
+            <button id="trocarSenha">Trocar senha</button>
+            <section id="buttons">
+                <button id="btn_cadastrar">Cadastrar</button>
+                <button id="btn_login">Login</button>
+            </section>
+            <script>
+                //------------------//
+                // Visualizar senha //
+                //------------------// 
+                let eyeicon = document.getElementById("eyeicon")
+                let eyeiconNewPsw = document.getElementById("eyeiconNewPsw")
+                let eyeiconConfNewPsw = document.getElementById("eyeiconConfNewPsw")
+                let password = document.getElementById("password")
+                let newPassword = document.getElementById("newPassword")
+                let confNewPassword = document.getElementById("confNewPassword")
+
+                eyeicon.onclick = function () {
+                    if (password.type == "password") {
+                        password.type = "text";
+                        eyeicon.src = "../assets/icons/eye-open.png";
+                    } else {
+                        password.type = "password";
+                        eyeicon.src = "../assets/icons/eye-close.png";
+                    }
+                }
+
+                eyeiconNewPsw.onclick = function () {
+                    if (newPassword.type == "password") {
+                        newPassword.type = "text";
+                        eyeiconNewPsw.src = "../assets/icons/eye-open.png";
+                    } else {
+                        newPassword.type = "password";
+                        eyeiconNewPsw.src = "../assets/icons/eye-close.png";
+                    }
+                }
+
+                eyeiconConfNewPsw.onclick = function () {
+                    if (confNewPassword.type == "password") {
+                        confNewPassword.type = "text";
+                        eyeiconConfNewPsw.src = "../assets/icons/eye-open.png";
+                    } else {
+                        confNewPassword.type = "password";
+                        eyeiconConfNewPsw.src = "../assets/icons/eye-close.png";
+                    }
+                }
+                //------------------------//
+                // Valida senha e usuário //
+                //------------------------// 
+                let username = document.getElementById("myText")
+                let psw = document.getElementById("password")
+                let nPsw = document.getElementById("newPassword")
+                let cNewPsw = document.getElementById("confNewPassword")
+                let log_form = document.getElementsByClassName("form")
+                let erroUser = document.getElementById("error")
+                let erroPsw = document.getElementById("errorPsw")
+                let erroNewPsw = document.getElementById("errorNewPsw")
+                let erroConfNewPsw = document.getElementById("errorConfNewPsw")
+
+                let validUser = false
+                let validPsw = false
+                let validNewPsw = false
+                let validConfNewPsw = false
+
+                username.addEventListener("input", function (e) {
+                    let pattern = /^[\w\d-]{4,10}$/;
+                    let currentValue = e.target.value;
+                    validUser = pattern.test(currentValue);
+
+                    if (validUser) {
+                        erroUser.style.display = "none"
+                    } else {
+                        erroUser.style.display = "block"
+                    }
+                    return validUser;
+                })
+
+                psw.addEventListener("input", function (e) {
+                    let pattern = /^[\w\d-]{6,8}$/;
+                    let currentValue = e.target.value;
+                    validPsw = pattern.test(currentValue);
+
+                    if (validPsw) {
+                        erroPsw.style.display = "none"
+                    } else {
+                        erroPsw.style.display = "block"
+                    }
+                    return validPsw;
+                })
+
+                nPsw.addEventListener("input", function (e) {
+                    let pattern = /^[\w\d-]{6,8}$/;
+                    let currentValue = e.target.value;
+                    validNewPsw = pattern.test(currentValue);
+
+                    if (validNewPsw) {
+                        erroNewPsw.style.display = "none"
+                    } else {
+                        erroNewPsw.style.display = "block"
+                    }
+                    return validNewPsw;
+                })
+
+                cNewPsw.addEventListener("input", function (e) {
+                    let pattern = /^[\w\d-]{6,8}$/;
+                    let currentValue = e.target.value;
+                    validConfNewPsw = pattern.test(currentValue);
+
+                    if (validConfNewPsw) {
+                        erroConfNewPsw.style.display = "none"
+                    } else {
+                        erroConfNewPsw.style.display = "block"
+                    }
+                    return validConfNewPsw;
+                })
+                //--------------------------------//
+                // Mostra para criar a nova senha //
+                //--------------------------------// 
+                let forgotPassword = document.getElementById("forgotPassword")
+                let newPsw = document.getElementById("newPsw")
+                let confNewPsw = document.getElementById("confNewPsw")
+                let trocarSenha = document.getElementById("trocarSenha")
+
+                forgotPassword.onclick = function () {
+                    if (newPsw.style.display == "inline-block" && confNewPsw.style.display == "inline-block" && trocarSenha.style.display == "inline-block") {
+                        newPsw.style.display = "none"
+                        confNewPsw.style.display = "none"
+                        trocarSenha.style.display = "none"
+                    } else {
+                        newPsw.style.display = "inline-block"
+                        confNewPsw.style.display = "inline-block"
+                        trocarSenha.style.display = "inline-block"
+                    }
+                    return false;
+                }
+                //-----------------------//
+                // Botão de trocar senha //
+                //-----------------------//
+                trocarSenha.addEventListener('click', function (e) {
+                    if (nPsw.value == "" && validNewPsw == false && validConfNewPsw == false) {
+                        alert("A senha não pode estar vazia");
+                        return false
+                    }
+                    else if (nPsw.value != cNewPsw.value && validNewPsw == false && validConfNewPsw == false) {
+                        alert("As senhas estão diferentes");
+                        return false
+                    }
+                    else if (nPsw.value != cNewPsw.value && validNewPsw == true && validConfNewPsw == true) {
+                        alert("As senhas estão diferentes");
+                        return false
+                    }
+                    else if (nPsw.value == cNewPsw.value && validNewPsw == true && validConfNewPsw == true) {
+                        alert("A senha foi alterada com sucesso");
+                        psw.value = nPsw.value;
+                        return psw.value
+                    }
+                    return psw.value
+                })
+                //-----------------------//
+                // Check Box - Lembre-me //
+                //-----------------------//
+                var checkbox = document.getElementById("myCheckBox")
+                //--------------------//
+                // Botão de cadastrar //
+                //--------------------// 
+                let btn_cadastrar = document.getElementById("btn_cadastrar")
+                let userCad = "";
+                let pswCad = "";
+
+                btn_cadastrar.onclick = function () {
+                    if (validUser == true && validPsw == true && !checkbox.checked) {
+                        alert("Cadastro efetuado com sucesso");
+                    }
+                    else if (validUser == true && validPsw == true && checkbox.checked) {
+                        alert("Cadastro efetuado com sucesso");
+                        return false
+                    }
+                    else {
+                        alert("Não foi possivel efetuar o cadastro");
+                    }
+                    return true
+                }
+                //----------------//
+                // Botão de login //
+                //----------------// 
+                let btn_login = document.getElementById("btn_login")
+
+                btn_login.onclick = function () {
+                    if (validUser && validPsw && username.value == userCad.value && psw.value == pswCad.value) {
+                        alert("Login efetuado com sucesso");
+                        window.open("main.html");
+                    } else {
+                        alert("Não foi possivel efetuar o login");
+                    }
+                }
+            </script>
         </form>
     </main>
 </body>
