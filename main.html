@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +9,8 @@
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" href="./css/post_area.css">
 	<link rel="stylesheet" href="./css/table.css">
+	<script type="text/javascript" src="./js/main.js"></script>
 </head>
-
 <body>
 	<div class="container-main">
 		<div class="container-content">
@@ -47,29 +46,29 @@
 				<div class="container-postit-area">
 					<section class="form-postit">
 						<h3>Escreva uma nota!</h3>
-						<form class="form-postit">
-							<input type="text" maxlength="28" placeholder="Título">
-							<textarea maxlength="200" placeholder="Vou escrever sobre..."></textarea>
+						<form id="form-post" class="form-postit" method="POST">
+							<input id="inputTitle" type="text" maxlength="28" placeholder="Título">
+							<textarea id="inputText" maxlength="200" placeholder="Vou escrever sobre..."></textarea>
 							<div class="options-panel">
-								<select class="select-font-box">
-									<option value="1">Roboto</option>
-									<option value="2">Arial</option>
-									<option value="3">Times</option>
-									<option value="4">Calibri</option>
+								<select id="selectFont" type="select" class="select-font-box">
+									<option value="Roboto">Roboto</option>
+									<option value="Arial">Arial</option>
+									<option value="Times">Times</option>
+									<option value="Calibri">Calibri</option>
 								</select>
-								<select class="select-color-box">
-									<option value="1">Amarelo</option>
-									<option value="2">Azul</option>
-									<option value="3">Rosa</option>
-									<option value="4">Verde</option>
+								<select id="selectColor" class="select-color-box" type="select">
+									<option value="Amarelo">Amarelo</option>
+									<option value="Azul">Azul</option>
+									<option value="Rosa">Rosa</option>
+									<option value="Verde">Verde</option>
 								</select>
-								<input type="checkbox">
+								<input id="isPrivate" type="checkbox">
 								<label><b>Privado</b></label>
 							</div>
-							<p style="color:red;">O título deve ser preenchido</p> <!-- TEMPORARIO -->
+							<p id="form-post-warning" style="color:red;display:none;"></p>
 							<div class="options-panel form-postit-buttons">
-								<button id="btn-limpar">Limpar</button>
-								<button id="btn-postit">Post-It!</button>
+								<button id="btn-limpar" type="reset" value="reset">Limpar</button>
+								<button id="btn-postit" type="button" onclick="postIt(getPostFormData())">Post-It!</button>
 							</div>
 						</form>
 					</section>
@@ -97,47 +96,7 @@
 									<th><img src="./assets/icons/unfold_more.svg" alt="Ordenação">Cor</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td><img src="assets/icons/trash.svg" alt="Lixeira"></td>
-									<td>Meu Título</td>
-									<td>Lorem Ipsum</td>
-									<td>BOT</td>
-									<td>Roboto</td>
-									<td>Azul</td>
-								</tr>
-								<tr>
-									<td><img src="assets/icons/trash.svg" alt="Lixeira"></td>
-									<td>Título1</td>
-									<td>Lorem Ipsum</td>
-									<td>Nicolas</td>
-									<td>Arial</td>
-									<td>Amarelo</td>
-								</tr>
-								<tr>
-									<td><img src="assets/icons/trash.svg" alt="Lixeira"></td>
-									<td>Título2</td>
-									<td>Lorem Ipsum</td>
-									<td>Luís</td>
-									<td>Times</td>
-									<td>Verde</td>
-								</tr>
-								<tr>
-									<td><img src="assets/icons/trash.svg" alt="Lixeira"></td>
-									<td>Título3</td>
-									<td>Lorem Ipsum</td>
-									<td>Lyan</td>
-									<td>Calibri</td>
-									<td>Rosa</td>
-								</tr>
-								<tr>
-									<td><img src="assets/icons/trash.svg" alt="Lixeira"></td>
-									<td>Título4</td>
-									<td>Lorem Ipsum</td>
-									<td>Giovani</td>
-									<td>Roboto</td>
-									<td>Azul</td>
-								</tr>
+							<tbody id="datatable">
 							</tbody>
 						</table>
 						<div class="tfoot">
@@ -156,6 +115,7 @@
 						</div>
 					</div>
 				</section>
+				<script>updateTable()</script>
 			</main>
 		</div>
 		<footer>
@@ -170,5 +130,4 @@
 		</footer>
 	</div>
 </body>
-
 </html>
