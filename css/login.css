@@ -50,7 +50,7 @@ form {
     flex-grow: 0;
 }
 
-.texto1 {
+.titulo {
     width: 305px;
     height: 160px;
 
@@ -66,41 +66,26 @@ form {
 .textfield {
     display: inline-block;
     position: relative;
+    text-align: center;
 }
 
 .textfield input {
     padding: 10px 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-#newPsw {
+.textfield#registerLogin {
+    display: inline-block;
+    position: relative;
+}
+
+.textfield#createNewPassword {
     display: none;
     position: relative;
 }
 
-#newPsw input {
-    padding: 10px 5px;
-}
-
-#confNewPsw {
-    display: none;
-    position: relative;
-}
-
-#confNewPsw input {
-    padding: 10px 5px;
-}
-
-#trocarSenha {
-    color: black;
-    background: none;
-    margin-top: 10px;
-    width: 10rem;
-    padding: 8px;
-    border-radius: 10px;
-    display: none;
-}
-
-.errorUserPsw {
+.errorRegsLogin {
     color: red;
     font-size: 10px;
     letter-spacing: 1px;
@@ -109,16 +94,17 @@ form {
     display: none;
 }
 
-img {
-    background-color: white;
-    position: absolute;
-    top: 10px;
-    right: 8px;
-    width: 24px;
+button {
+    background: none;
+    color: #ec6e6e;
+    margin-top: 10px;
+    width: 10rem;
+    padding: 8px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
-#forgotPassword {
+button#senhaEsq {
     color: #ec6e6e;
     font-size: 14px;
     background: none;
@@ -127,24 +113,12 @@ img {
     padding: 0;
 }
 
-button {
-    cursor: pointer;
-}
-
-#btn_cadastrar {
+button#changePsw {
+    color: black;
     background: none;
-    color: #ec6e6e;
     margin-top: 10px;
     width: 10rem;
     padding: 8px;
     border-radius: 10px;
-}
-
-#btn_login {
-    background: none;
-    color: #ec6e6e;
-    margin-top: 10px;
-    width: 10rem;
-    padding: 8px;
-    border-radius: 10px;
+    display: inline-block;
 }
