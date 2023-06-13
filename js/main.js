@@ -1,6 +1,17 @@
 // Chave para array de posts no localStorage
 const postsKey = 'posts'
 
+function user() {
+	/*
+	if (JSON.parse(sessionStorage.getItem("user")) == null) {
+		window.open('login.html','_self')
+	}
+	*/
+	let user = document.getElementById('username')
+	user.innerHTML = JSON.parse(sessionStorage.getItem("user")).username
+	return user
+}
+
 function postIt(post) {
 	if (localStorage.getItem(postsKey) == null) {
 		localStorage.setItem(postsKey, '[]');
@@ -76,6 +87,31 @@ function getHTML_tableRows() {
 function updateTable() {
 	let rows = getHTML_tableRows();
 	document.getElementById('datatable').innerHTML = rows;
+	
+}
+
+function hideButton() {
+	let btn_test = document.getElementById('btn-test')
+	let btn_cancel = document.getElementById('btn-cancel')
+	let btn_limpar = document.getElementById('btn-limpar')
+	let btn_postit = document.getElementById('btn-postit')
+		
+	btn_test.style.display = "none"
+	btn_cancel.style.display = "none"
+	btn_postit.style.display = "inline-block"
+	btn_limpar.style.display = "inline-block"
+}
+
+function showButton() {
+	let btn_limpar = document.getElementById('btn-limpar')
+	let btn_postit = document.getElementById('btn-postit')
+	let btn_test = document.getElementById('btn-test')
+	let btn_cancel = document.getElementById('btn-cancel')
+
+	btn_limpar.style.display = "none"
+	btn_postit.style.display = "none"
+	btn_test.style.display = "inline-block"
+	btn_cancel.style.display = "inline-block"
 }
 
 function isPostsNull() {

@@ -80,6 +80,34 @@ form .form-postit-buttons button {
 	background-color: var(--black);
 }
 
+#btn-test {
+	display: none;
+	background-color: white;
+}
+
+#btn-test:hover {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#btn-test:active {
+	color: white;
+	background-color: var(--black);
+}
+
+#btn-cancel {
+	display: none;
+	color: white;
+	background-color: var(--black);
+}
+
+#btn-cancel:hover {
+	color: var(--black);
+	background-color: white;
+	cursor: pointer;
+}
+
+
 .options-panel select {
 	border-radius: 5px;
 	height: 32px;
