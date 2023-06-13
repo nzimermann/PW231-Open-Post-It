@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="icon" href="assets/icons/favicon.svg">
     <link rel="stylesheet" href="./css/login.css">
     <script type="text/javascript" src="./js/login.js"></script>
@@ -20,9 +21,10 @@
             <label class="titulo">Login</label>
 
             <section class="textfield" id="registerLogin">
-                <input type="text" name="" id="username" placeholder="Usuário" onfocus="validateUser()">
+                <input type="text" name="" id="username" placeholder="Usuário" onfocus="validate('username', 'erroUser')">
                 <p class="errorRegsLogin" id="erroUser">O usuário deve ter no minimo 4 caracteres [a-z,A-z,0-9,-,_]</p>
-                <input type="password" name="" id="password" placeholder="Senha" onfocus="validatePassword()">
+                <input type="password" name="" id="password" placeholder="Senha" onfocus="validate('password', 'erroPassword')">
+                <i class="fa-solid fa-eye" id="eyeicon" onclick="showPassword('eyeicon', 'password')"></i>
                 <p class="errorRegsLogin" id="erroPassword">A senha deve ter no minimo 8 caracteres [a-z,A-z,0-9,-,_]</p>
                 <br><input type="checkbox" name="" id="myCheckBox">
                 <label>Lembre-me</label>
@@ -31,11 +33,13 @@
             <button type="button" id="senhaEsq" onclick="forgotPassword()">Esqueceu a Senha?</button>
 
             <section class="textfield" id="createNewPassword">
-                <input type="text" name="" id="verifyUser" placeholder="Usuário" onfocus="verifyUsername()">
-                <p class="errorRegsLogin" id="erroVUser">Esse usuário não está cadastrado</p>
-                <input type="password" name="" id="newPassword" placeholder="Nova senha" onfocus="validateNewPassword()">
+                <input type="text" name="" id="verifyUser" placeholder="Usuário" onfocus="validate('verifyUser', 'erroVUser')">
+                <p class="errorRegsLogin" id="erroVUser">O usuário deve ter no minimo 4 caracteres [a-z,A-z,0-9,-,_]</p>
+                <input type="password" name="" id="newPassword" placeholder="Nova senha" onfocus="validate('newPassword', 'erroNewPassword')">
+                <i class="fa-solid fa-eye" id="newEyeicon" onclick="showPassword('newEyeicon', 'newPassword')"></i>
                 <p class="errorRegsLogin" id="erroNewPassword">A senha deve ter no minimo 8 caracteres [a-z,A-z,0-9,-,_]</p>
-                <input type="password" name="" id="confNewPassword" placeholder="Confirmar nova senha" onfocus="validateConfNewPassword()">
+                <input type="password" name="" id="confNewPassword" placeholder="Confirmar nova senha" onfocus="validate('confNewPassword', 'erroConfNewPassword')">
+                <i class="fa-solid fa-eye" id="confNewEyeicon" onclick="showPassword('confNewEyeicon', 'confNewPassword')"></i>
                 <p class="errorRegsLogin" id="erroConfNewPassword">A senha deve ter no minimo 8 caracteres [a-z,A-z,0-9,-,_]</p>
                 <button type="button" id="changePsw" onclick="changePassword()">Trocar senha</button>
             </section>

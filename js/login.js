@@ -1,84 +1,35 @@
 let objPeople = []
 
-function validateUser() {
-    username.addEventListener("input", function (e) {
-        let pattern = /^[\w\d-]{4,32}$/;
-        let currentValue = e.target.value;
-        let validUser = pattern.test(currentValue)
-        let erroUser = document.getElementById("erroUser")
-        if (validUser) {
-            erroUser.style.display = "none"
+function validate(inputID, errorID) {
+    let input = document.getElementById(inputID)
+    let error = document.getElementById(errorID)
+    let pattern
+    input.addEventListener("input", function (e) {
+        if (input.type == "password" || inputID == "password" || inputID == "newPassword" || inputID == "confNewPassword") {
+            pattern = /^[\w\d_]{8,255}$/
         } else {
-            erroUser.style.display = "block"
+            pattern = /^[\w\d_]{4,32}$/
         }
-        return validUser;
+        let currentValue = e.target.value;
+        let valid = pattern.test(currentValue)
+        if (valid) {
+            error.style.display = "none"
+        } else {
+            error.style.display = "block"
+        }
     })
 }
 
-function validatePassword() {
-    password.addEventListener("input", function (e) {
-        let pattern = /^[\w\d-]{8,255}$/;
-        let currentValue = e.target.value;
-        let validPassword = pattern.test(currentValue)
-        let erroPassword = document.getElementById("erroPassword")
-        if (validPassword) {
-            erroPassword.style.display = "none"
-        } else {
-            erroPassword.style.display = "block"
-        }
-        return validPassword;
-    })
-}
-
-function verifyUsername() {
-    let verifyUser = document.getElementById("verifyUser")
-
-    verifyUser.addEventListener("input", function (e) {
-        let pattern = /^[\w\d-]{4,32}$/;
-        let currentValue = e.target.value;
-        let valiVdUser = pattern.test(currentValue)
-        let erroVUser = document.getElementById("erroVUser")
-        if (valiVdUser) {
-            erroVUser.style.display = "none"
-        } else {
-            erroVUser.style.display = "block"
-        }
-        return valiVdUser;
-    })
-}
-
-function validateNewPassword() {
-    let newPassword = document.getElementById("newPassword")
-
-    newPassword.addEventListener("input", function (e) {
-        let pattern = /^[\w\d-]{8,255}$/;
-        let currentValue = e.target.value;
-        let validNewPassword = pattern.test(currentValue)
-        let erroNewPassword = document.getElementById("erroNewPassword")
-        if (validNewPassword) {
-            erroNewPassword.style.display = "none"
-        } else {
-            erroNewPassword.style.display = "block"
-        }
-        return validNewPassword;
-    })
-}
-
-function validateConfNewPassword() {
-    let confNewPassword = document.getElementById("confNewPassword")
-
-    confNewPassword.addEventListener("input", function (e) {
-        let pattern = /^[\w\d-]{8,255}$/;
-        let currentValue = e.target.value;
-        let validConfNewPassword = pattern.test(currentValue)
-        let erroConfNewPassword = document.getElementById("erroConfNewPassword")
-        if (validConfNewPassword) {
-            erroConfNewPassword.style.display = "none"
-        } else {
-            erroConfNewPassword.style.display = "block"
-        }
-        return validConfNewPassword;
-    })
+function showPassword(targetID, inputID) {
+    let id = document.getElementById(targetID)
+    let input = document.getElementById(inputID)
+    if (input.type == "password") {
+        input.type = "text";
+        id.classList.toggle("fa-eye-slash")
+    } else {
+        input.type = "password";
+        id.classList.toggle("fa-eye-slash")
+    }
 }
 
 function forgotPassword() {
@@ -100,22 +51,42 @@ function forgotPassword() {
 }
 
 function changePassword() {
-    let changePsw = document.getElementById("changePsw")
+    let verifyUser = document.getElementById("verifyUser").value
+    let newPassword = document.getElementById("newPassword").value
+    let confNewPassword = document.getElementById("confNewPassword").value
+    let existe = false
     let newPsw = {
-        username: verifyUser.value,
-        password: confNewPassword.value
+        username: verifyUser,
+        password: confNewPassword
     }
-    if (newPassword.value == "" && confNewPassword.value == "") {
+    for (i = 0; i < objPeople.length; i++) {
+        if (!objPeople[i].username.includes(verifyUser)) {
+            existe = false
+        } else {
+            existe = true
+            break
+        }
+    }
+    if (verifyUser == "") {
+        alert("O usuário não deve estar vazio")
         clearInput()
-        alert("As senhas não pode estar vazia");
     }
-    else if (newPassword.value != confNewPassword.value) {
+    else if (existe == false) {
+        alert("Esse usuário não está cadastrado")
+        clearInput()
+        return
+    }
+    else if (newPassword == "" && confNewPassword == "") {
+        clearInput()
+        alert("As senhas não podem estar vazia");
+    }
+    else if (newPassword != confNewPassword) {
         clearInput()
         alert("As senhas estão diferentes");
     }
-    else if (newPassword.value == confNewPassword.value) {
+    else if (newPassword == confNewPassword && /^[\w\d_]{8,255}$/.test(newPassword) && /^[\w\d_]{8,255}$/.test(confNewPassword)) {
         for (i = 0; i < objPeople.length; i++) {
-            if (verifyUser.value == objPeople[i].username) {
+            if (verifyUser == objPeople[i].username) {
                 delete objPeople[i]
                 objPeople[i] = newPsw
             }
@@ -133,12 +104,12 @@ function registerUser() {
         username: registerUsername,
         password: registerPassword
     }
-    if (registerUsername.length < 4) {
+    if (registerUsername.length < 4 || !/^[\w\d_]{4,32}$/.test(registerUsername)) {
         alert("Não foi possivel efetuar o cadastro")
         clearInput()
         return
     }
-    if (registerPassword.length < 8) {
+    if (registerPassword.length < 8 || !/^[\w\d_]{8,255}$/.test(registerPassword)) {
         alert("Não foi possivel efetuar o cadastro")
         clearInput()
         return
@@ -149,7 +120,7 @@ function registerUser() {
             clearInput()
             return
         }
-        else if (registerPassword.length < 8) {
+        else if (registerPassword.length < 8 || !/^[\w\d_]{8,255}$/.test(registerPassword)) {
             alert("Não foi possivel efetuar o cadastro")
             clearInput()
             return
@@ -168,14 +139,21 @@ function registerUser() {
 function login() {
     let username = document.getElementById("username").value
     let password = document.getElementById("password").value
+    let isLogin = false
 
     for (i = 0; i < objPeople.length; i++) {
         if (username == objPeople[i].username && password == objPeople[i].password) {
-            alert("Login efetuado com sucesso")
-            window.open("main.html")
-        } else {
-            alert("Não foi possivel efetuar o login")
+            isLogin = true
+            break
         }
+    }
+    if (isLogin) {
+        sessionStorage.setItem("username", username)
+        alert("Login efetuado com sucesso")
+        clearInput()
+        window.open("main.html")
+    } else {
+        alert("Não foi possivel efetuar o login")
     }
 }
 
