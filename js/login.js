@@ -94,6 +94,7 @@ function changePassword() {
         forgotPassword()
         alert("A senha foi alterada com sucesso");
     }
+    console.log(objPeople)
 }
 
 function registerUser() {
@@ -103,6 +104,11 @@ function registerUser() {
     let newUser = {
         username: registerUsername,
         password: registerPassword
+    }
+    if (JSON.parse(sessionStorage.getItem("user")) != null && JSON.parse(sessionStorage.getItem("user")).username == registerUsername) {
+        alert("Não foi possivel efetuar o cadastro")
+        clearInput()
+        return
     }
     if (registerUsername.length < 4 || !/^[\w\d_]{4,32}$/.test(registerUsername)) {
         alert("Não foi possivel efetuar o cadastro")
@@ -134,6 +140,7 @@ function registerUser() {
         objPeople.push(newUser)
         clearInput()
     }
+    console.log(objPeople)
 }
 
 function login() {
@@ -147,11 +154,22 @@ function login() {
             break
         }
     }
+    if (JSON.parse(sessionStorage.getItem("user")) != null && JSON.parse(sessionStorage.getItem("user")).username == username && JSON.parse(sessionStorage.getItem("user")).password == password) {
+        isLogin = true
+    }
     if (isLogin) {
-        sessionStorage.setItem("username", username)
+        for (i = 0; i < objPeople.length; i++) {
+            if (username == objPeople[i].username && password == objPeople[i].password) {
+                sessionStorage.setItem("user", JSON.stringify({
+                    "username": objPeople[i].username,
+                    "password": objPeople[i].password
+                }))
+            }
+        }
+        console.log(sessionStorage.getItem("user"))
         alert("Login efetuado com sucesso")
         clearInput()
-        window.open("main.html")
+        window.open("main.html","_self")
     } else {
         alert("Não foi possivel efetuar o login")
     }
