@@ -22,10 +22,10 @@
 
             <section class="textfield" id="registerLogin">
                 <input type="text" name="" id="username" placeholder="Usuário" onfocus="validate('username', 'erroUser')">
-                <p class="errorRegsLogin" id="erroUser">O usuário deve ter no minimo 4 caracteres [a-z,A-z,0-9,-,_]</p>
+                <p class="errorRegsLogin" id="erroUser">O usuário deve ter no minimo 4 caracteres [a-z,A-z,0-9,_]</p>
                 <input type="password" name="" id="password" placeholder="Senha" onfocus="validate('password', 'erroPassword')">
                 <i class="fa-solid fa-eye" id="eyeicon" onclick="showPassword('eyeicon', 'password')"></i>
-                <p class="errorRegsLogin" id="erroPassword">A senha deve ter no minimo 8 caracteres [a-z,A-z,0-9,-,_]</p>
+                <p class="errorRegsLogin" id="erroPassword">A senha deve ter no minimo 8 caracteres [a-z,A-z,0-9,_]</p>
                 <br><input type="checkbox" name="" id="myCheckBox">
                 <label>Lembre-me</label>
             </section>
@@ -34,13 +34,13 @@
 
             <section class="textfield" id="createNewPassword">
                 <input type="text" name="" id="verifyUser" placeholder="Usuário" onfocus="validate('verifyUser', 'erroVUser')">
-                <p class="errorRegsLogin" id="erroVUser">O usuário deve ter no minimo 4 caracteres [a-z,A-z,0-9,-,_]</p>
+                <p class="errorRegsLogin" id="erroVUser">O usuário deve ter no minimo 4 caracteres [a-z,A-z,0-9,_]</p>
                 <input type="password" name="" id="newPassword" placeholder="Nova senha" onfocus="validate('newPassword', 'erroNewPassword')">
                 <i class="fa-solid fa-eye" id="newEyeicon" onclick="showPassword('newEyeicon', 'newPassword')"></i>
-                <p class="errorRegsLogin" id="erroNewPassword">A senha deve ter no minimo 8 caracteres [a-z,A-z,0-9,-,_]</p>
+                <p class="errorRegsLogin" id="erroNewPassword">A senha deve ter no minimo 8 caracteres [a-z,A-z,0-9,_]</p>
                 <input type="password" name="" id="confNewPassword" placeholder="Confirmar nova senha" onfocus="validate('confNewPassword', 'erroConfNewPassword')">
                 <i class="fa-solid fa-eye" id="confNewEyeicon" onclick="showPassword('confNewEyeicon', 'confNewPassword')"></i>
-                <p class="errorRegsLogin" id="erroConfNewPassword">A senha deve ter no minimo 8 caracteres [a-z,A-z,0-9,-,_]</p>
+                <p class="errorRegsLogin" id="erroConfNewPassword">A senha deve ter no minimo 8 caracteres [a-z,A-z,0-9,_]</p>
                 <button type="button" id="changePsw" onclick="changePassword()">Trocar senha</button>
             </section>
 

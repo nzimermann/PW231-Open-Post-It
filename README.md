@@ -23,5 +23,5 @@
 - [x] Ao clicar no menu/submenu deve abrir a tela correspondente
 - [ ] Ao clicar em uma linha da tabela, deve-se permitir o usuário edita-la (pode-se carregar novamente os dados no formulário para edição)
 - [x] Ao clicar em uma linha da tabela, deve-se permitir o usuário exclui-la
-- [ ] Ao realizar o login, deve-se fazer uma validação com login e senha fixos e só assim poderá ser acessado a segunda página. Caso a segunda página seja acessada diretamente, deve-se retornar ao login caso ainda não o tenha feito. Salvar dados de login na session.
+- [x] Ao realizar o login, deve-se fazer uma validação com login e senha fixos e só assim poderá ser acessado a segunda página. Caso a segunda página seja acessada diretamente, deve-se retornar ao login caso ainda não o tenha feito. Salvar dados de login na session.
 - [x] Os dados da tabela devem ser armazenados no LocalStorage ou Cookies de modo que ao fechar a página e reabri-la as informações sejam mantidas.

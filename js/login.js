@@ -6,7 +6,7 @@ function validate(inputID, errorID) {
     let pattern
     input.addEventListener("input", function (e) {
         if (input.type == "password" || inputID == "password" || inputID == "newPassword" || inputID == "confNewPassword") {
-            pattern = /^[a-zA-Zà-úÀ-Ú0-9_]{8,255}$/
+            pattern = /^[a-zA-Z0-9_]{8,255}$/
         } else {
             pattern = /^[a-zA-Zà-úÀ-Ú0-9_]{4,32}$/
         }
@@ -84,7 +84,7 @@ function changePassword() {
         clearInput()
         alert("As senhas estão diferentes");
     }
-    else if (newPassword == confNewPassword && /^[a-zA-Zà-úÀ-Ú0-9_]{8,255}$/.test(newPassword) && /^[a-zA-Zà-úÀ-Ú0-9_]{8,255}$/.test(confNewPassword)) {
+    else if (newPassword == confNewPassword && /^[a-zA-Z0-9_]{8,255}$/.test(newPassword) && /^[a-zA-Z0-9_]{8,255}$/.test(confNewPassword)) {
         for (i = 0; i < objPeople.length; i++) {
             if (verifyUser == objPeople[i].username) {
                 delete objPeople[i]
@@ -115,7 +115,7 @@ function registerUser() {
         clearInput()
         return
     }
-    if (registerPassword.length < 8 || !/^[a-zA-Zà-úÀ-Ú0-9_]{8,255}$/.test(registerPassword)) {
+    if (registerPassword.length < 8 || !/^[a-zA-Z0-9_]{8,255}$/.test(registerPassword)) {
         alert("Não foi possivel efetuar o cadastro")
         clearInput()
         return
@@ -126,7 +126,7 @@ function registerUser() {
             clearInput()
             return
         }
-        else if (registerPassword.length < 8 || !/^[a-zA-Zà-úÀ-Ú0-9_]{8,255}$/.test(registerPassword)) {
+        else if (registerPassword.length < 8 || !/^[a-zA-Z0-9_]{8,255}$/.test(registerPassword)) {
             alert("Não foi possivel efetuar o cadastro")
             clearInput()
             return
