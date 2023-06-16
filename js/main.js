@@ -1,5 +1,6 @@
 // Chave para array de posts no localStorage
 const postsKey = 'posts'
+let postRemovido = false;
 
 function user() {
 	
@@ -102,10 +103,62 @@ function getHTML_tableRows() {
 	return str;
 }
 
+function getHTML_divPostIts() {
+	if (isPostsNull()) return '';
+	let posts = JSON.parse(localStorage.getItem(postsKey));
+	let str = ``;
+	
+	for (let i = 0; i < posts.length; i++) {
+		let color = getPost(i).color;
+		let font = getPost(i).font;
+
+		switch(color) {
+			case 'Amarelo':
+				color = "background-color:#FFC03F;"
+				break;
+			case 'Azul':
+				color = "background-color:#9FD5DF;"
+				break;
+			case 'Rosa':
+				color = "background-color:#F0A2A2;"
+				break;
+			case 'Verde':
+				color = "background-color:#69D7B1;"
+				break;
+		}
+
+		switch(font) {
+			case 'Roboto':
+				font = "font-family: 'Roboto', sans-serif;"
+				break;
+			case 'Arial':
+				font = "font-family: Arial, Helvetica, sans-serif;"
+				break;
+			case 'Times':
+				font = "font-family: 'Times New Roman', Times, serif;"
+				break;
+			case 'Segoe UI':
+				font = "font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;"
+				break;
+		}
+
+		str += `<div class="post-it" style="${color}${font}">
+			<h4>${getPost(i).title}</h4>
+			<p>${getPost(i).text}</p>
+		</div>`;
+	}
+	return str;
+}
+
 function updateTable() {
 	let rows = getHTML_tableRows();
 	document.getElementById('datatable').innerHTML = rows;
-	
+	updatePostIts();
+}
+
+function updatePostIts() {
+	let divs = getHTML_divPostIts();
+	document.getElementById('postit-area').innerHTML = divs;
 }
 
 function hideButton() {
@@ -141,19 +194,29 @@ function isPostsNull() {
 function removePost(index) {
 	if (isPostsNull()) return;
 	let posts = JSON.parse(localStorage.getItem(postsKey));
+	if (!verifyUser(getPost(index).user)) {
+		alert('Você não pode excluir publicações de outros usuários!');
+		return;
+	}
 	if (confirm("Deletar post-it?")) {
 		posts.splice(index, 1);
 		localStorage.setItem(postsKey, JSON.stringify(posts));
 		updateTable();
+		postRemovido = true;
 	}
 }
 
 function alterPost(index) {
 	if (isPostsNull()) return;
+	if (postRemovido) {
+		postRemovido = false;
+		return;
+	}
 	document.getElementById('form-post-warning').style.display = 'none';
-	let posts = JSON.parse(localStorage.getItem(postsKey));
-	loadPost_to_form(posts[index]);
+	if (!verifyUser(getPost(index).user)) return;
+	loadPost_to_form(getPost(index));
 	document.getElementById('btn-test').onclick = function() {
+		if (!verifyPostFormDataOk(getPostFormData())) return;
 		updatePost(getPostFormData(), index);
 		hideButton();
 	}
@@ -172,9 +235,11 @@ function loadPost_to_form(post) {
 function updatePost(newPost, index) {
 	if (isPostsNull()) return;
 	let posts = JSON.parse(localStorage.getItem(postsKey));
-	let og_username = posts[index].user;
-	newPost.user = og_username;
 	posts[index] = newPost;
 	localStorage.setItem(postsKey, JSON.stringify(posts));
 	updateTable();
+}
+
+function verifyUser(username) {
+	return (JSON.parse(sessionStorage.getItem('user')).username === username);
 }
