@@ -80,28 +80,28 @@ form .form-postit-buttons button {
 	background-color: var(--black);
 }
 
-#btn-test {
+#btn-cancel {
 	display: none;
 	background-color: white;
 }
 
-#btn-test:hover {
+#btn-cancel:hover {
 	cursor: pointer;
 	font-weight: bold;
 }
 
-#btn-test:active {
+#btn-cancel:active {
 	color: white;
 	background-color: var(--black);
 }
 
-#btn-cancel {
+#btn-test {
 	display: none;
 	color: white;
 	background-color: var(--black);
 }
 
-#btn-cancel:hover {
+#btn-test:hover {
 	color: var(--black);
 	background-color: white;
 	cursor: pointer;

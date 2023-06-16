@@ -37,9 +37,9 @@
 						</li>
 					</ul>
 				</nav>
-				<div class="user-area" onclick="alert('Usuário está cadastrado')">
+				<div class="user-area">
 					<img src="assets/icons/person_icon.svg" alt="Ícone do usuário">
-					<span id="username"></span>
+					<span id="username"><a href="login.html" style="text-decoration: none;">Logar</a></span>
 				</div>
 			</header>
 			<main>			
@@ -69,8 +69,8 @@
 							<div class="options-panel form-postit-buttons">
 								<button id="btn-limpar" type="reset" value="reset">Limpar</button>
 								<button id="btn-postit" type="button" onclick="postIt(getPostFormData())">Post-It!</button>
-								<button id="btn-test" type="button">Test</button>
 								<button id="btn-cancel" type="button" onclick="hideButton()">Cancelar</button>
+								<button id="btn-test" type="button">Test</button>
 							</div>
 						</form>
 					</section>

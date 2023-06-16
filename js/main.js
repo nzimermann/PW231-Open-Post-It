@@ -2,14 +2,14 @@
 const postsKey = 'posts'
 
 function user() {
-	/*
-	if (JSON.parse(sessionStorage.getItem("user")) == null) {
-		window.open('login.html','_self')
+	let user_label = document.getElementById('username');
+	if (sessionStorage.getItem("user") != null) {
+		user_label.innerHTML = `
+		<span style="text-decoration: none;" 
+		onclick="alert('Usuário já logado')">
+		${JSON.parse(sessionStorage.getItem("user")).username}
+		</span>`
 	}
-	*/
-	let user = document.getElementById('username')
-	user.innerHTML = JSON.parse(sessionStorage.getItem("user")).username
-	return user
 }
 
 function postIt(post) {
@@ -27,7 +27,14 @@ function postIt(post) {
 }
 
 function getPostFormData() {
+	let user;
+	if (sessionStorage.getItem('user') == null) {
+		user = null;
+	} else {
+		user = JSON.parse(sessionStorage.getItem('user')).username
+	}
 	return {
+		"user":user,
 		"title":document.getElementById('inputTitle').value,
 		"text":document.getElementById('inputText').value,
 		"font":document.getElementById('selectFont').value,
@@ -54,6 +61,12 @@ function verifyPostFormDataOk(post) {
 		return false;
 	}
 
+	if (post.user == null || post.user == '') {
+		warningElement.innerHTML = 'É preciso logar para fazer um Post-It';
+		warningElement.style.display = 'block';
+		return false;
+	}
+
 	warningElement.style.display = 'none';
 	return true;
 }
@@ -76,7 +89,7 @@ function getHTML_tableRows() {
 		<td><img src="assets/icons/trash.svg" alt="Lixeira" onclick='removePost(${i})'></td>
 		<td>${getPost(i).title}</td>
 		<td title="${getPost(i).text}">${text}</td>
-		<td>${document.getElementById('username').innerHTML}</td>
+		<td>${getPost(i).user}</td>
 		<td>${getPost(i).font}</td>
 		<td>${getPost(i).color}</td>
 		</tr>`;
@@ -100,6 +113,7 @@ function hideButton() {
 	btn_cancel.style.display = "none"
 	btn_postit.style.display = "inline-block"
 	btn_limpar.style.display = "inline-block"
+	clearForm(document.getElementById('form-post'));
 }
 
 function showButton() {
