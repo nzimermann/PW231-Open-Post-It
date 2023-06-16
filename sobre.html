@@ -9,11 +9,11 @@
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" href="./css/sobre.css">
 </head>
-<body>
+<body onload="user()">
 	<div class="container-main">
 		<div class="container-content">
 			<header>
-				<img src="./assets/img/logo.png" class="logo" alt="logo" onClick="window.location.reload()">
+				<a href="main.html"><img src="./assets/img/logo.png" class="logo" alt="logo"></a>
 				<nav>
 					<ul class="btn-segment">
 						<li id="btn-principal">
@@ -36,87 +36,56 @@
 
 					</ul>
 				</nav>
-				<div class="user-area" onclick="alert('Usuário já autenticado')">
+				<div class="user-area">
 					<img src="assets/icons/person_icon.svg" alt="Ícone do usuário">
-					<span>Seu Usuário</span>
+					<span id="username"><a href="login.html" style="text-decoration: none;">Logar</a></span>
 				</div>
 			</header>
 			<main id="mainSobre">
 				<p>
 					O Post-it é um pequeno papel de diversos tamanhos e cores que possui uma pequena parte revestida de
-					uma
-					substância adesiva especial que permite que seja facilmente colado, retirado e recolocado várias
-					vezes,
-					sem
-					deixar quaisquer marcas ou vestígios nas superfícies onde é utilizado. O início da sua criação
-					começa em
-					1968, quando um cientista da empresa 3M, o Dr. Spencer Silver, tentava aperfeiçoar as colas para as
-					fitas
-					adesivas. Sem querer acabou por descobrir um adesivo altamente posicionavel e que estava
-					completamente
-					fora
-					das características que ele procurava.
+					uma	substância adesiva especial que permite que seja facilmente colado, retirado e recolocado várias
+					vezes, sem deixar quaisquer marcas ou vestígios nas superfícies onde é utilizado. O início da sua criação
+					começa em 1968, quando um cientista da empresa 3M, o Dr. Spencer Silver, tentava aperfeiçoar as colas para as
+					fitas adesivas. Sem querer acabou por descobrir um adesivo altamente posicionavel e que estava
+					completamente fora das características que ele procurava.
 				</p>
 				<p>
 					A sua curiosidade aumentou quando ao examinar o novo adesivo
 					constatou que este era formado por pequenas esferas com o diâmetro de uma fibra de papel, as quais
-					não
-					se
-					dissolviam, não derretiam e eram extremamente adesivas, apesar de não se fixarem com muita força
-					quando
-					aplicadas nos suportes das fitas. Spencer percebeu que tinha feito uma importante descoberta mas não
+					não	se dissolviam, não derretiam e eram extremamente adesivas, apesar de não se fixarem com muita força
+					quando aplicadas nos suportes das fitas. Spencer percebeu que tinha feito uma importante descoberta mas não
 					descortinava qual a utilidade que a mesma poderia ter na vida real. Decidiu então dar a conhecer
-					esta
-					inovação e durante os cinco anos seguintes divulgou a sua existência através de seminários. Ao mesmo
-					tempo
-					deu a conhecer o novo adesivo aos seus colegas e superiores hierárquicos da 3M. Conseguiu um aliado
-					em
-					Geof
-					Nicholson, director de desenvolvimento de novos produtos da 3M, que ficou muito interessado no seu
+					esta inovação e durante os cinco anos seguintes divulgou a sua existência através de seminários. Ao mesmo
+					tempo deu a conhecer o novo adesivo aos seus colegas e superiores hierárquicos da 3M. Conseguiu um aliado
+					em Geof	Nicholson, director de desenvolvimento de novos produtos da 3M, que ficou muito interessado no seu
 					potencial.
 				</p>
 				<p>
 					Em 1974 um colega de trabalho de Spencer, Art Fry, que costumava cantar no coro da
-					igreja,
-					começou a ficar frustrado porque os bocados de papel que usava para fazer as marcações nos seus
-					livros
-					de
-					canto, estavam sempre a cair. Lembrou-se então do adesivo que Spencer tinha inventado e surgiu-lhe a
-					ideia
-					de o usar para segurar os seus marcadores. Começou a desenvolver a ideia e conseguiu adaptar a
-					descoberta do
-					seu colega por forma a criar um produto eficaz e inovador, embora na altura não tivesse percepção
-					disso.
-					Mas
-					mesmo assim, em 1977, contra o grande cepticismo que corria na empresa em relação ao produto, a 3M
-					lançou a
-					criação de Art Fry no mercado mas obteve pouco sucesso. Durante o ano seguinte a 3M dedicou-se a
-					analisar
-					falta de sucesso do seu novo produto, tendo concluído que o problema residia no facto de ninguém
-					entender a
-					sua utilidade, pois para as pessoas era desconhecido o conceito de notas e recados autocolantes.
+					igreja,	começou a ficar frustrado porque os bocados de papel que usava para fazer as marcações nos seus
+					livros de canto, estavam sempre a cair. Lembrou-se então do adesivo que Spencer tinha inventado e surgiu-lhe a
+					ideia de o usar para segurar os seus marcadores. Começou a desenvolver a ideia e conseguiu adaptar a
+					descoberta do seu colega por forma a criar um produto eficaz e inovador, embora na altura não tivesse percepção
+					disso. Mas mesmo assim, em 1977, contra o grande cepticismo que corria na empresa em relação ao produto, a 3M
+					lançou a criação de Art Fry no mercado mas obteve pouco sucesso. Durante o ano seguinte a 3M dedicou-se a
+					analisar falta de sucesso do seu novo produto, tendo concluído que o problema residia no facto de ninguém
+					entender a sua utilidade, pois para as pessoas era desconhecido o conceito de notas e recados autocolantes.
 				</p>
 				<p>
-					Perante
-					esta conclusão, a opção da 3M teve tanto de simples como de eficaz: começou a distribuir amostras
-					gratuitas
-					pelos moradores de 11 estados americanos e conseguiu o tão desejado sucesso, com uma adesão à sua
-					utilização
-					de cerca de 90% das pessoas. Assim, foi com naturalidade que o mercado americano recebeu, em 1980, a
+					Perante	esta conclusão, a opção da 3M teve tanto de simples como de eficaz: começou a distribuir amostras
+					gratuitas pelos moradores de 11 estados americanos e conseguiu o tão desejado sucesso, com uma adesão à sua
+					utilização de cerca de 90% das pessoas. Assim, foi com naturalidade que o mercado americano recebeu, em 1980, a
 					primeira embalagem do famoso bloco de notas amarelo canário, que na altura tinha o nome de “Scotch
-					Press
-					and
-					Peel”. Em 1981 o produto foi lançado no Canadá e na Europa e passou a ser considerado o produto mais
-					valioso
-					da 3M, já com o nome de Post-it Note. Desde então o Post-it foi adoptado por todo o mundo como a
-					solução
-					mais simples, ágil e eficiente para registar e colocar notas temporárias nos mais variados sítios.
+					Press and Peel”. Em 1981 o produto foi lançado no Canadá e na Europa e passou a ser considerado o produto mais
+					valioso	da 3M, já com o nome de Post-it Note. Desde então o Post-it foi adoptado por todo o mundo como a
+					solução	mais simples, ágil e eficiente para registar e colocar notas temporárias nos mais variados sítios.
 				</p>
-				<img src=".\assets\img\artfry1.jpg" class="image">
+				<img src=".\assets\img\artfry1.jpg" class="image" alt="Foto do doutor Spencer Silver">
 			</main>
 		</div>
 		<footer>
-			<img src=".\assets\img\logofooter2.png" class="logoF">
+			<img src=".\assets\img\logofooter2.png" class="logoF" alt="Logo rodapé">
 				<div class="textN">
 					<span class="nomes">Lyan Rodrigues</span>
 					<span class="nomes">Giovane dos Santos</span>
@@ -126,5 +95,20 @@
 				<span class="ano">2023 ©</span>
 		</footer>
 	</div>
+	<script>
+		function user() {
+			if (JSON.parse(sessionStorage.getItem("user")) == null) {
+				window.open('login.html','_self')
+			}
+			let user_label = document.getElementById('username');
+			if (sessionStorage.getItem("user") != null) {
+				user_label.innerHTML = `
+				<span style="text-decoration: none;" 
+				onclick="alert('Usuário já logado')">
+				${JSON.parse(sessionStorage.getItem("user")).username}
+				</span>`
+			}
+		}
+	</script>
 </body>
 </html>

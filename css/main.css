@@ -188,7 +188,7 @@ header .user-area {
 	flex-grow: 0;
 }
 
-header .user-area:hover > * {
+header #username:hover{
 	cursor: pointer;
 }
 

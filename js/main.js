@@ -2,6 +2,11 @@
 const postsKey = 'posts'
 
 function user() {
+	
+	if (JSON.parse(sessionStorage.getItem("user")) == null) {
+		window.open('login.html','_self')
+	}
+	
 	let user_label = document.getElementById('username');
 	if (sessionStorage.getItem("user") != null) {
 		user_label.innerHTML = `
@@ -85,7 +90,7 @@ function getHTML_tableRows() {
 		if (text.length > 22) {
 			text = text.substring(0, 22)+'...';
 		}
-		str += `<tr>
+		str += `<tr onclick="alterPost(${i})">
 		<td><img src="assets/icons/trash.svg" alt="Lixeira" onclick='removePost(${i})'></td>
 		<td>${getPost(i).title}</td>
 		<td title="${getPost(i).text}">${text}</td>
@@ -141,4 +146,35 @@ function removePost(index) {
 		localStorage.setItem(postsKey, JSON.stringify(posts));
 		updateTable();
 	}
+}
+
+function alterPost(index) {
+	if (isPostsNull()) return;
+	document.getElementById('form-post-warning').style.display = 'none';
+	let posts = JSON.parse(localStorage.getItem(postsKey));
+	loadPost_to_form(posts[index]);
+	document.getElementById('btn-test').onclick = function() {
+		updatePost(getPostFormData(), index);
+		hideButton();
+	}
+}
+
+function loadPost_to_form(post) {
+	if (post == null || post == '') return;
+	document.getElementById('inputTitle').value = post.title;
+	document.getElementById('inputText').value = post.text;
+	document.getElementById('selectFont').value = post.font;
+	document.getElementById('selectColor').value = post.color;
+	document.getElementById('isPrivate').checked = post.isPrivate;
+	showButton();
+}
+
+function updatePost(newPost, index) {
+	if (isPostsNull()) return;
+	let posts = JSON.parse(localStorage.getItem(postsKey));
+	let og_username = posts[index].user;
+	newPost.user = og_username;
+	posts[index] = newPost;
+	localStorage.setItem(postsKey, JSON.stringify(posts));
+	updateTable();
 }
