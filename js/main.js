@@ -108,7 +108,7 @@ function getHTML_divPostIts() {
 	let posts = JSON.parse(localStorage.getItem(postsKey));
 	let str = ``;
 	
-	for (let i = 0; i < posts.length; i++) {
+	for (let i = posts.length-1; i >= 0 && i > posts.length-7; i--) {
 		let color = getPost(i).color;
 		let font = getPost(i).font;
 
