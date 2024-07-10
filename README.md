@@ -1,4 +1,15 @@
-# PW231-Mat-Open-Post-It
+# Open-Post-It
+Um site simples usando somente HTML, CSS e Javascript. O objetivo é criar um site no qual os usuários possam se cadastrar e publicar algum texto dentro de um post-it, o usuário poderá escolher se esse texto será público ou privado.
+
+
+## Screenshots
+
+<img src="screenshots/main_page.png" alt="Main page" width="800"/><br>
+<img src="screenshots/login_page.png" alt="Login page" width="800"/><br>
+<img src="screenshots/about_page.png" alt="About page" width="800"/><br>
+
+
+## Requisitos
 
 ### Requisitos mínimos da interface gráfica (13/13): 
 - [x] Conter cabeçalho com título
